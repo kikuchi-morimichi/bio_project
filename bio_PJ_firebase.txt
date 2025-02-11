@@ -1,0 +1,77 @@
+# firebaseのセットアップ手順
+
+> https://www.kkaneko.jp/tools/ubuntu/ubuntu_nodejs.html
+> 
+
+### 最新状態に更新
+
+> sudo apt -y update
+sudo apt -yV upgrade
+sudo /sbin/shutdown -r now
+> 
+
+### curlのインストール
+
+> sudo apt -y install curl
+> 
+
+### nvmのインストール
+
+> curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
+source ~/.profile
+> 
+
+### node.jsのインストール
+
+> nvm ls-remote
+nvm install 23.6.0
+nvm list
+nvm use 23.6.0
+> 
+
+### firebase cliのインストール
+
+> npm install -g firebase-tools
+> 
+
+### firebaseへのログイン
+
+> firebase login
+> 
+
+### プロジェクトの表示
+
+> firebase projects:list
+> 
+
+### 任意の場所にプロジェクト用のフォルダを作成して移動
+
+> touch <file名>
+cd <file名>
+> 
+
+### プロジェクトの初期化
+
+> firebase init
+> 
+
+### デプロイにはどのディレクトリを使用するか？エンター押下でデフォルトのpublicが作成される。
+
+> ? What do you want to use as your public directory? public
+> 
+
+### すでに存在するindex.htmlを上書きするか？存在しない場合はyes
+
+> ? Configure as a single-page app (rewrite all urls to /index.html)? No　
+? Set up automatic builds and deploys with GitHub? No
+> 
+
+### デプロイする。これが完了すると公開される。
+
+> firebase deploy
+> 
+
+### プロジェクトの公開を停止する
+
+> firebase hosting:disable --project <project id>
+>
